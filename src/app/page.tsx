@@ -1,69 +1,84 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import {
+  Container,
+  Typography,
+  Card,
+  CardContent,
+  Box,
+  Button
+} from '@mui/material';
+import Link from 'next/link';
+import { reactTopics } from '../data/reactTopics';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      <Box sx={{ mb: 4, textAlign: 'center' }}>
+        <Typography variant="h3" component="h1" gutterBottom>
+          📚 Sistema de Aprendizaje Next.js
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 2 }}>
+          Tu guía interactiva para aprender Next.js y Material UI
+        </Typography>
+      </Box>
+
+      <Box sx={{
+        display: 'grid',
+        gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+        gap: 3
+      }}>
+        {reactTopics.map((topic) => (
+          <Box key={topic.id}>
+            <Card
+              sx={{
+                height: '100%',
+                transition: 'transform 0.2s, box-shadow 0.2s',
+                '&:hover': {
+                  transform: 'translateY(-4px)',
+                  boxShadow: 6,
+                },
+              }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+              <CardContent>
+                <Box sx={{ fontSize: '3rem', mb: 2, textAlign: 'center' }}>
+                  {topic.icon}
+                </Box>
+                <Typography variant="h6" component="h2" gutterBottom align="center">
+                  {topic.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 2 }}>
+                  {topic.description}
+                </Typography>
+                <Box sx={{ textAlign: 'center', mt: 2 }}>
+                  <Link href={topic.subtopics?.[0]?.path || '/'}>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                    >
+                      Explorar
+                    </Button>
+                  </Link>
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+        ))}
+      </Box>
+
+      <Box sx={{ mt: 6, p: 3, bgcolor: 'background.paper', borderRadius: 1 }}>
+        <Typography variant="h5" gutterBottom>
+          🎯 Cómo usar este sistema
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2 }}>
+          Este sistema está diseñado para ayudarte a aprender Next.js de manera interactiva.
+          Cada tema contiene:
+        </Typography>
+        <ul>
+          <li>Teoría detallada con ejemplos</li>
+          <li>Código funcional que puedes ver y modificar</li>
+          <li>Visualización en tiempo real de los conceptos</li>
+          <li>Navegación fácil entre temas relacionados</li>
+        </ul>
+      </Box>
+    </Container>
   );
 }
