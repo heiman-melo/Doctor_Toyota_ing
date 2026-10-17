@@ -1,84 +1,64 @@
-import {
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  Box,
-  Button
-} from '@mui/material';
-import Link from 'next/link';
-import { reactTopics } from '../data/reactTopics';
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import ServiceCalculator from '../components/ServiceCalculator';
+import ServicesGrid from '../components/ServicesGrid';
+import ModelsSection from '../components/ModelsSection';
+import DiagnosticSteps from '../components/DiagnosticSteps';
+import ContactSection from '../components/ContactSection';
+import WhatsAppFloat from '../components/WhatsAppFloat';
+import Footer from '../components/Footer';
+
+export const metadata = {
+  title: 'Doctor Toyota | Especialistas Automotrices Toyota - Hilux, Prado, Land Cruiser',
+  description:
+    'Taller automotriz especializado en la marca Toyota. Diagnóstico computarizado con scanner oficial Techstream GTS+, mantenimiento preventivo, sistemas 4x4 y mecánica pesada con repuestos 100% genuinos.',
+  keywords: [
+    'Doctor Toyota',
+    'Taller Toyota',
+    'Mecánica Toyota',
+    'Scanner Techstream',
+    'Repuestos Toyota Genuinos',
+    'Mantenimiento Hilux',
+    'Taller Prado',
+    'Taller Land Cruiser',
+    'Inyección Diésel D-4D',
+    'Mantenimiento 4x4 Toyota',
+  ],
+};
 
 export default function HomePage() {
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Box sx={{ mb: 4, textAlign: 'center' }}>
-        <Typography variant="h3" component="h1" gutterBottom>
-          📚 Sistema de Aprendizaje Next.js
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 2 }}>
-          Tu guía interactiva para aprender Next.js y Material UI
-        </Typography>
-      </Box>
+    <div className="min-h-screen bg-[#121212] text-white flex flex-col overflow-x-hidden selection:bg-[#EB0A1E] selection:text-white">
+      {/* Header / Navbar Responsivo */}
+      <Navbar />
 
-      <Box sx={{
-        display: 'grid',
-        gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-        gap: 3
-      }}>
-        {reactTopics.map((topic) => (
-          <Box key={topic.id}>
-            <Card
-              sx={{
-                height: '100%',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: 6,
-                },
-              }}
-            >
-              <CardContent>
-                <Box sx={{ fontSize: '3rem', mb: 2, textAlign: 'center' }}>
-                  {topic.icon}
-                </Box>
-                <Typography variant="h6" component="h2" gutterBottom align="center">
-                  {topic.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 2 }}>
-                  {topic.description}
-                </Typography>
-                <Box sx={{ textAlign: 'center', mt: 2 }}>
-                  <Link href={topic.subtopics?.[0]?.path || '/'}>
-                    <Button
-                      variant="outlined"
-                      size="small"
-                    >
-                      Explorar
-                    </Button>
-                  </Link>
-                </Box>
-              </CardContent>
-            </Card>
-          </Box>
-        ))}
-      </Box>
+      {/* Main Content Sections */}
+      <main className="flex-1 w-full">
+        {/* 1. Hero Section Adaptable */}
+        <Hero />
 
-      <Box sx={{ mt: 6, p: 3, bgcolor: 'background.paper', borderRadius: 1 }}>
-        <Typography variant="h5" gutterBottom>
-          🎯 Cómo usar este sistema
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Este sistema está diseñado para ayudarte a aprender Next.js de manera interactiva.
-          Cada tema contiene:
-        </Typography>
-        <ul>
-          <li>Teoría detallada con ejemplos</li>
-          <li>Código funcional que puedes ver y modificar</li>
-          <li>Visualización en tiempo real de los conceptos</li>
-          <li>Navegación fácil entre temas relacionados</li>
-        </ul>
-      </Box>
-    </Container>
+        {/* 2. Módulo Calculadora / Cotizador de Servicio Rápido */}
+        <ServiceCalculator />
+
+        {/* 3. Catálogo de Servicios Especializados */}
+        <ServicesGrid />
+
+        {/* 4. Sección Modelos que Atendemos */}
+        <ModelsSection />
+
+        {/* 5. Sección de Confianza y Transparencia ("El Diagnóstico Doctor Toyota") */}
+        <DiagnosticSteps />
+
+        {/* 6. Ubicación, Horarios y Formulario de Agendamiento */}
+        <ContactSection />
+      </main>
+
+      {/* Botón Flotante Persistente de WhatsApp */}
+      <WhatsAppFloat />
+
+      {/* Footer Completo */}
+      <Footer />
+    </div>
   );
 }

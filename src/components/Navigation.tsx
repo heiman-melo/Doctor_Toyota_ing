@@ -39,7 +39,7 @@ import {
 // Link SIEMPRE se usa para navegación interna (como <a> pero sin recargar)
 // usePathname SIEMPRE se usa para obtener la URL actual
 // useRouter SIEMPRE se usa para navegación programática
-import Link from 'next/link';
+import Link from 'next/link'; // ya vi que no usaste este porque no quiciste cambiar la estructura que ya tenias con material UI
 import { usePathname, useRouter } from 'next/navigation';
 
 // Importación de nuestros datos y tipos
