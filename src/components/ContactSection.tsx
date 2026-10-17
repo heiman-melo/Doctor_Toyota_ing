@@ -25,7 +25,7 @@ export default function ContactSection() {
   const generateWhatsAppUrl = () => {
     const text = `Hola *Doctor Toyota*, deseo agendar un turno formal en el taller:
     
-👤 *Nombre:* ${formData.name || 'Cliente'}
+👤 *Nombre:* ${formData.name || 'Cliente'} 
 📱 *Teléfono:* ${formData.phone || 'Por confirmar'}
 🚗 *Vehículo:* ${formData.model} (Año ${formData.year})
 🔧 *Servicio requerido:* ${formData.service}
