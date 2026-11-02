@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   description:
     'Taller mecánico especializado exclusivo en la marca Toyota. Diagnóstico con escáner oficial GTS+ Techstream, mantenimiento preventivo y mecánica pesada con repuestos 100% genuinos.',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/icon.svg',
+    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -32,6 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth dark`}>
       <head>
+        {/* Favicons explícitos para compatibilidad con todos los navegadores y Vercel */}
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script src="https://cdn.tailwindcss.com" />
         <script
           dangerouslySetInnerHTML={{
