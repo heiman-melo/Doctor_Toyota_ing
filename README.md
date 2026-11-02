@@ -1,37 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 Doctor Toyota — Especialistas Automotrices
 
-## Getting Started
+Sitio web oficial para **Doctor Toyota**, taller mecánico de alta ingeniería especializado exclusivamente en vehículos Toyota (Hilux, Land Cruiser, Prado, Fortuner, 4Runner, RAV4, Corolla, FJ Cruiser).
 
-First, run the development server:
+---
+
+## 🛠️ Tecnologías y Arquitectura
+
+- **Framework:** [Next.js](https://nextjs.org/) (App Router) con TypeScript.
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (diseño dark automotriz industrial: `#121212`, `#2A2A2A`, `#EB0A1E`).
+- **Diseño Mobile-First:** 100% responsivo para smartphone, tablet y escritorio.
+- **Iconos:** Librería modular SVG adaptada a Lucide.
+- **Integraciones:** Generador inteligente de cotizaciones con mensajes directos a WhatsApp y apertura de mapas (Google Maps / Waze).
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+├── public/                 # Recursos estáticos
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css     # Estilos globales y paleta Doctor Toyota
+│   │   ├── layout.tsx      # RootLayout con viewport y SEO
+│   │   └── page.tsx        # Página principal ensamblada
+│   ├── components/         # Módulos de interfaz de Doctor Toyota
+│   │   ├── ContactSection.tsx     # Ubicación, mapa, horarios y agendamiento
+│   │   ├── DiagnosticSteps.tsx    # Método transparente en 3 pasos
+│   │   ├── Footer.tsx             # Pie de página y disclaimer legal
+│   │   ├── Hero.tsx               # Encabezado principal y badges de confianza
+│   │   ├── Icons.tsx              # Componentes de iconografía SVG
+│   │   ├── ModelsSection.tsx      # Catálogo de modelos Toyota y motorizaciones
+│   │   ├── Navbar.tsx             # Barra de navegación con menú móvil
+│   │   ├── ServiceCalculator.tsx  # Cotizador interactivo en tiempo real
+│   │   ├── ServicesGrid.tsx       # Catálogo filtrable de servicios
+│   │   └── WhatsAppFloat.tsx      # Botón flotante persistente de contacto
+│   └── data/
+│       └── toyotaData.ts   # Modelos, especificaciones, servicios y datos de contacto
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+---
+
+## 🚀 Inicio Rápido
+
+Para iniciar el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Teoria_NextJs_24_08_26
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.

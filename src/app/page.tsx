@@ -10,7 +10,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Doctor Toyota | Especialistas Automotrices Toyota - Hilux, Prado, Land Cruiser',
+  title: 'Doctor Toyota  ing | Especialistas Automotrices Toyota - Hilux, Prado, Land Cruiser',
   description:
     'Taller automotriz especializado en la marca Toyota. Diagnóstico computarizado con scanner oficial Techstream GTS+, mantenimiento preventivo, sistemas 4x4 y mecánica pesada con repuestos 100% genuinos.',
   keywords: [
