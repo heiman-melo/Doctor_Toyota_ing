@@ -127,12 +127,12 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-white hover:underline"
                 >
-                  WhatsApp: +57 312 450 8920
+                  WhatsApp: +58 4147082614
                 </a>
               </div>
               <div className="flex items-start gap-2 pt-1">
                 <Clock size={15} className="text-gray-400 shrink-0 mt-0.5" />
-                <span className="text-gray-400">Lun - Vie: 7:30 AM - 6:00 PM | Sáb: 8:00 AM - 2:30 PM</span>
+                <span className="text-gray-400">Lun - Vie: 8:00 AM - 6:00 PM | Sáb: No Laboramos</span>
               </div>
             </div>
           </div>

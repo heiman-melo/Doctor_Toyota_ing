@@ -80,7 +80,7 @@ Agradezco confirmar si tienen espacio disponible en el horario indicado.`;
                 </span>
 
                 <a
-                  href={`https://maps.google.com/?q=${encodeURIComponent(WORKSHOP_INFO.address)}`}
+                  href={"https://maps.app.goo.gl/a6TD752UrJW4neeA6"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 z-10 text-xs text-[#EB0A1E] font-bold bg-[#141414]/90 px-3 py-1.5 rounded-lg border border-[#3A3A3A] hover:bg-[#EB0A1E] hover:text-white transition-colors"
@@ -201,7 +201,7 @@ Agradezco confirmar si tienen espacio disponible en el horario indicado.`;
                       id="client-phone"
                       type="tel"
                       required
-                      placeholder="Ej: 312 456 7890"
+                      placeholder="Ej: 04147082614"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-[#121212] border border-[#333333] focus:border-[#EB0A1E] text-white text-sm rounded-xl px-3.5 py-3 outline-none"
